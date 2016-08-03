@@ -16,6 +16,15 @@ foreign import javascript unsafe "Microsoft['Maps']['MapTypeId']['birdseye']"
 foreign import javascript unsafe "Microsoft['Maps']['MapTypeId']['road']"
     bingMapTypeRoad :: BingMapType
 
+
+type LabelOverlayState = JSString
+
+foreign import javascript unsafe "Microsoft['Maps']['LabelOverlay']['hidden']"
+    bingMapLabelHidden :: LabelOverlayState
+
+foreign import javascript unsafe "Microsoft['Maps']['LabelOverlay']['visible']"
+    bingMapLabelVisible :: LabelOverlayState
+
 type Heading = Int
 
 type JSMapOptions = Object

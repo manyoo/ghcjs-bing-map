@@ -109,6 +109,7 @@ data MapOptionItem = OptCredentials JSString
                    | OptAnimate Bool
                    | OptCenter Location
                    | OptHeading Heading
+                   | OptLabelOverlay LabelOverlayState
                    | OptMapType BingMapType
                    | OptZoom Int
 
@@ -140,6 +141,7 @@ toJSVals (OptTileBuffer t)           = toJSValsHelper "tileBuffer" t
 toJSVals (OptUseInertia u)           = toJSValsHelper "useInertia" u
 toJSVals (OptAnimate a)              = toJSValsHelper "animate" a
 toJSVals (OptCenter c)               = toJSValsHelper "center" c
+toJSVals (OptLabelOverlay l)         = toJSValsHelper "labelOverlay" l
 toJSVals (OptHeading h)              = toJSValsHelper "heading" h
 toJSVals (OptMapType t)              = toJSValsHelper "mapTypeId" t
 toJSVals (OptZoom z)                 = toJSValsHelper "zoom" z
