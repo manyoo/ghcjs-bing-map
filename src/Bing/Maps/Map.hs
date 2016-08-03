@@ -73,8 +73,15 @@ foreign import javascript unsafe "($2)['setMapType']($1)"
 foreign import javascript unsafe "($2)['setOptions']($1)"
     jsSetOptions :: JSMapOptions -> Map -> IO ()
 
+-- | set map view options
+foreign import javascript unsafe "($2)['setView']($1)"
+    jsSetView :: JSMapOptions -> Map -> IO ()
+
 setOptions :: MapOption -> Map -> IO ()
 setOptions op m = toJSOption op >>= flip jsSetOptions m
+
+setView :: MapOption -> Map -> IO ()
+setView op m = toJSOption op >>= flip jsSetView m
 
 data MapOptionItem = OptCredentials JSString
                    | OptCustomizeOverlays Bool
