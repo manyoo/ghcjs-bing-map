@@ -70,7 +70,7 @@ foreign import javascript unsafe "($2)['setMapType']($1)"
     setMapType :: BingMapType -> Map -> IO ()
 
 -- | set map options
-foreign import javascript unsafe "($2)['setOPtions']($1)"
+foreign import javascript unsafe "($2)['setOptions']($1)"
     jsSetOptions :: JSMapOptions -> Map -> IO ()
 
 setOptions :: MapOption -> Map -> IO ()
