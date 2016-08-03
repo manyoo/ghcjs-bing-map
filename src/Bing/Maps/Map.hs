@@ -99,6 +99,11 @@ data MapOptionItem = OptCredentials JSString
                    | OptShowScaleBar Bool
                    | OptTileBuffer Int
                    | OptUseInertia Bool
+                   | OptAnimate Bool
+                   | OptCenter Location
+                   | OptHeading Heading
+                   | OptMapType BingMapType
+                   | OptZoom Int
 
 type MapOption = [MapOptionItem]
 
@@ -126,6 +131,12 @@ toJSVals (OptShowMapTypeSelector s)  = toJSValsHelper "showMapTypeSelector" s
 toJSVals (OptShowScaleBar s)         = toJSValsHelper "showScalebar" s
 toJSVals (OptTileBuffer t)           = toJSValsHelper "tileBuffer" t
 toJSVals (OptUseInertia u)           = toJSValsHelper "useInertia" u
+toJSVals (OptAnimate a)              = toJSValsHelper "animate" a
+toJSVals (OptCenter c)               = toJSValsHelper "center" c
+toJSVals (OptHeading h)              = toJSValsHelper "heading" h
+toJSVals (OptMapType t)              = toJSValsHelper "mapTypeId" t
+toJSVals (OptZoom z)                 = toJSValsHelper "zoom" z
+
 
 toJSOption :: MapOption -> IO JSMapOptions
 toJSOption opts = do

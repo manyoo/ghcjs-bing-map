@@ -1,9 +1,11 @@
-{-# LANGUAGE JavaScriptFFI #-}
+{-# LANGUAGE JavaScriptFFI, GeneralizedNewtypeDeriving #-}
 module Bing.Maps.Location where
 
 import GHCJS.Types
+import GHCJS.Marshal
 
 newtype Location = Location JSVal
+    deriving ToJSVal
 
 newtype Latitude  = Latitude {
     getLatNum :: Double
