@@ -15,16 +15,16 @@ newtype Longitude = Longitude {
     }
 
 foreign import javascript unsafe "new Microsoft['Maps']['Location']($1, $2)"
-    mkLocation :: Latitude -> Longitude -> Location
+    mkLocation :: Latitude -> Longitude -> IO Location
 
 foreign import javascript unsafe "($1)['latitude']"
-    latitude :: Location -> Latitude
+    latitude :: Location -> IO Latitude
 
 foreign import javascript unsafe "($1)['longitude']"
-    longitude :: Location -> Longitude
+    longitude :: Location -> IO Longitude
 
 foreign import javascript unsafe "Microsoft['Maps']['Location']['areEqual']($1, $2)"
-    areEqual :: Location -> Location -> Bool
+    areEqual :: Location -> Location -> IO Bool
 
 foreign import javascript unsafe "Microsoft['Maps']['Location']['normalizeLongitude']($1)"
-    normalizeLongitude :: Longitude -> Longitude
+    normalizeLongitude :: Longitude -> IO Longitude

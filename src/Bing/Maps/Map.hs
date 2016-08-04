@@ -35,7 +35,7 @@ foreign import javascript unsafe "($1)['dispose']()"
 
 -- | returns the location of the center of the current map view
 foreign import javascript unsafe "($1)['getCneter']()"
-    getCenter :: Map -> Location
+    getCenter :: Map -> IO Location
 
 -- | gets the Session ID
 foreign import javascript interruptible "($1)['getCredentials'](function(cred) { $c(cred);});"
@@ -43,27 +43,27 @@ foreign import javascript interruptible "($1)['getCredentials'](function(cred) {
 
 -- | get Heading of the current map view
 foreign import javascript unsafe "($1)['getHeading']()"
-    getHeading :: Map -> Heading
+    getHeading :: Map -> IO Heading
 
 -- | get the height of the map control
 foreign import javascript unsafe "($1)['getHeight']()"
-    getHeight :: Map -> Double
+    getHeight :: Map -> IO Double
 
 -- | get the width of the map control
 foreign import javascript unsafe "($1)['getWidth']()"
-    getWidth :: Map -> Double
+    getWidth :: Map -> IO Double
 
 -- | returns the current scale in meters per pixel of the center of the map
 foreign import javascript unsafe "($1)['getMetersPerPixel']()"
-    getMetersPerPixel :: Map -> Double
+    getMetersPerPixel :: Map -> IO Double
 
 -- | returns the zoom level of the current map view
 foreign import javascript unsafe "($1)['getZoom']()"
-    getZoom :: Map -> Int
+    getZoom :: Map -> IO Int
 
 -- | returns a boolean indicating whether map imagery tiles are currently being downloaded
 foreign import javascript unsafe "($1)['isDownloadingTiles']()"
-    isDownloadingTiles :: Map -> Bool
+    isDownloadingTiles :: Map -> IO Bool
 
 -- | set the map type
 foreign import javascript unsafe "($2)['setMapType']($1)"
