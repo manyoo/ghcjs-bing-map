@@ -25,7 +25,7 @@ foreign import javascript unsafe "Microsoft['Maps']['LabelOverlay']['hidden']"
 foreign import javascript unsafe "Microsoft['Maps']['LabelOverlay']['visible']"
     bingMapLabelVisible :: LabelOverlayState
 
-type Heading = Int
+type Heading = Double
 
 type JSMapOptions = Object
 
