@@ -18,6 +18,10 @@ library
   exposed-modules:     Bing.Maps.Types,
                        Bing.Maps.Location,
                        Bing.Maps.Map,
+                       Bing.Maps.Search.PlaceResult,
+                       Bing.Maps.Search.GeocodeRequestOptions,
+                       Bing.Maps.Search.GeocodeResult,
+                       Bing.Maps.Search.SearchManager,
                        Bing.Maps
   build-depends:       base >= 4.7 && < 5
                      , ghcjs-base
