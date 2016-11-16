@@ -53,6 +53,10 @@ foreign import javascript unsafe "($1)['getHeight']()"
 foreign import javascript unsafe "($1)['getWidth']()"
     getWidth :: Map -> IO Double
 
+-- | returns a string that represents the imagery displayed
+foreign import javascript unsafe "($1)['getImageryId']()"
+    getImageryId :: Map -> IO JSString
+
 -- | returns the current scale in meters per pixel of the center of the map
 foreign import javascript unsafe "($1)['getMetersPerPixel']()"
     getMetersPerPixel :: Map -> IO Double
