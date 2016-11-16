@@ -18,6 +18,7 @@ library
   exposed-modules:     Bing.Maps.Types,
                        Bing.Maps.Location,
                        Bing.Maps.Map,
+                       Bing.Event,
                        Bing.Maps.Search.PlaceResult,
                        Bing.Maps.Search.GeocodeRequestOptions,
                        Bing.Maps.Search.GeocodeResult,
