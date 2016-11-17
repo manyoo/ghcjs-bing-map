@@ -63,7 +63,7 @@ foreign import javascript unsafe "($1)['getMetersPerPixel']()"
 
 -- | returns the zoom level of the current map view
 foreign import javascript unsafe "($1)['getZoom']()"
-    getZoom :: Map -> IO Int
+    getZoom :: Map -> IO Double
 
 -- | returns a boolean indicating whether map imagery tiles are currently being downloaded
 foreign import javascript unsafe "($1)['isDownloadingTiles']()"
@@ -115,7 +115,7 @@ data MapOptionItem = OptCredentials JSString
                    | OptHeading Heading
                    | OptLabelOverlay LabelOverlayState
                    | OptMapType BingMapType
-                   | OptZoom Int
+                   | OptZoom Double
 
 type MapOption = [MapOptionItem]
 
